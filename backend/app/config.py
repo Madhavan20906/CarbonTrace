@@ -27,7 +27,7 @@ class Settings:
         default_factory=lambda: Path(os.getenv("DEPLOYMENT_FILE", ROOT / "deployments" / "localhost.json"))
     )
     verifier_private_key: str = field(
-        default_factory=lambda: os.getenv("VERIFIER_PRIVATE_KEY", _DEV_VERIFIER_KEY)
+        default_factory=lambda: os.getenv("VERIFIER_PRIVATE_KEY") or _DEV_VERIFIER_KEY
     )
     # "simulated" = deterministic biome-reference demo data (no network). "sentinel2" = live Sentinel-2 NDVI.
     satellite_provider: str = field(default_factory=lambda: os.getenv("SATELLITE_PROVIDER", "simulated"))
