@@ -1,0 +1,3 @@
+# Only needed for SATELLITE_PROVIDER=sentinel2 (live Sentinel-2 NDVI from public COGs)
+rasterio>=1.3
+pyproj>=3.6

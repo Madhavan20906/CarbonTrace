@@ -1,0 +1,1480 @@
+[
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "admin",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "verifier",
+    "type": "address"
+   }
+  ],
+  "stateMutability": "nonpayable",
+  "type": "constructor"
+ },
+ {
+  "inputs": [],
+  "name": "AccessControlBadConfirmation",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   },
+   {
+    "internalType": "bytes32",
+    "name": "neededRole",
+    "type": "bytes32"
+   }
+  ],
+  "name": "AccessControlUnauthorizedAccount",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "AlreadyRevoked",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "AttestationExpired",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "BadCells",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint64",
+    "name": "cell",
+    "type": "uint64"
+   },
+   {
+    "internalType": "uint256",
+    "name": "projectId",
+    "type": "uint256"
+   }
+  ],
+  "name": "CellAlreadyClaimed",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "CellsHashMismatch",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "CellsNotSorted",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "ECDSAInvalidSignature",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "length",
+    "type": "uint256"
+   }
+  ],
+  "name": "ECDSAInvalidSignatureLength",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "bytes32",
+    "name": "s",
+    "type": "bytes32"
+   }
+  ],
+  "name": "ECDSAInvalidSignatureS",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "sender",
+    "type": "address"
+   },
+   {
+    "internalType": "uint256",
+    "name": "balance",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "needed",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "tokenId",
+    "type": "uint256"
+   }
+  ],
+  "name": "ERC1155InsufficientBalance",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "approver",
+    "type": "address"
+   }
+  ],
+  "name": "ERC1155InvalidApprover",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "idsLength",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "valuesLength",
+    "type": "uint256"
+   }
+  ],
+  "name": "ERC1155InvalidArrayLength",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "operator",
+    "type": "address"
+   }
+  ],
+  "name": "ERC1155InvalidOperator",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "receiver",
+    "type": "address"
+   }
+  ],
+  "name": "ERC1155InvalidReceiver",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "sender",
+    "type": "address"
+   }
+  ],
+  "name": "ERC1155InvalidSender",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "operator",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "owner",
+    "type": "address"
+   }
+  ],
+  "name": "ERC1155MissingApprovalForAll",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "EnforcedPause",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "ExpectedPause",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "InvalidAmount",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "InvalidShortString",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "InvalidTonnes",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "signer",
+    "type": "address"
+   }
+  ],
+  "name": "InvalidVerifier",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "MetadataHashMismatch",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "NonceAlreadyUsed",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "NotRecipient",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "ProjectIsRevoked",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint16",
+    "name": "scoreBps",
+    "type": "uint16"
+   }
+  ],
+  "name": "ScoreTooLow",
+  "type": "error"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "string",
+    "name": "str",
+    "type": "string"
+   }
+  ],
+  "name": "StringTooLong",
+  "type": "error"
+ },
+ {
+  "inputs": [],
+  "name": "UnknownProject",
+  "type": "error"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "operator",
+    "type": "address"
+   },
+   {
+    "indexed": false,
+    "internalType": "bool",
+    "name": "approved",
+    "type": "bool"
+   }
+  ],
+  "name": "ApprovalForAll",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [],
+  "name": "EIP712DomainChanged",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": false,
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "Paused",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "uint256",
+    "name": "projectId",
+    "type": "uint256"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "developer",
+    "type": "address"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint16",
+    "name": "vintage",
+    "type": "uint16"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "tonnes",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint16",
+    "name": "scoreBps",
+    "type": "uint16"
+   },
+   {
+    "indexed": false,
+    "internalType": "bytes32",
+    "name": "evidenceHash",
+    "type": "bytes32"
+   },
+   {
+    "indexed": false,
+    "internalType": "bytes32",
+    "name": "cellsHash",
+    "type": "bytes32"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint32",
+    "name": "cellCount",
+    "type": "uint32"
+   },
+   {
+    "indexed": false,
+    "internalType": "int32",
+    "name": "centroidLatE6",
+    "type": "int32"
+   },
+   {
+    "indexed": false,
+    "internalType": "int32",
+    "name": "centroidLonE6",
+    "type": "int32"
+   },
+   {
+    "indexed": false,
+    "internalType": "string",
+    "name": "metadataURI",
+    "type": "string"
+   }
+  ],
+  "name": "ProjectMinted",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "uint256",
+    "name": "projectId",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "string",
+    "name": "reason",
+    "type": "string"
+   }
+  ],
+  "name": "ProjectRevoked",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "uint256",
+    "name": "projectId",
+    "type": "uint256"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "amount",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "string",
+    "name": "beneficiary",
+    "type": "string"
+   },
+   {
+    "indexed": false,
+    "internalType": "string",
+    "name": "reason",
+    "type": "string"
+   }
+  ],
+  "name": "Retired",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "bytes32",
+    "name": "role",
+    "type": "bytes32"
+   },
+   {
+    "indexed": true,
+    "internalType": "bytes32",
+    "name": "previousAdminRole",
+    "type": "bytes32"
+   },
+   {
+    "indexed": true,
+    "internalType": "bytes32",
+    "name": "newAdminRole",
+    "type": "bytes32"
+   }
+  ],
+  "name": "RoleAdminChanged",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "bytes32",
+    "name": "role",
+    "type": "bytes32"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "sender",
+    "type": "address"
+   }
+  ],
+  "name": "RoleGranted",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "bytes32",
+    "name": "role",
+    "type": "bytes32"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "sender",
+    "type": "address"
+   }
+  ],
+  "name": "RoleRevoked",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "operator",
+    "type": "address"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "from",
+    "type": "address"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "to",
+    "type": "address"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256[]",
+    "name": "ids",
+    "type": "uint256[]"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256[]",
+    "name": "values",
+    "type": "uint256[]"
+   }
+  ],
+  "name": "TransferBatch",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "operator",
+    "type": "address"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "from",
+    "type": "address"
+   },
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "to",
+    "type": "address"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "id",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "value",
+    "type": "uint256"
+   }
+  ],
+  "name": "TransferSingle",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": false,
+    "internalType": "string",
+    "name": "value",
+    "type": "string"
+   },
+   {
+    "indexed": true,
+    "internalType": "uint256",
+    "name": "id",
+    "type": "uint256"
+   }
+  ],
+  "name": "URI",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": false,
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "Unpaused",
+  "type": "event"
+ },
+ {
+  "inputs": [],
+  "name": "CELL_SIZE_MICRODEG",
+  "outputs": [
+   {
+    "internalType": "uint32",
+    "name": "",
+    "type": "uint32"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "DEFAULT_ADMIN_ROLE",
+  "outputs": [
+   {
+    "internalType": "bytes32",
+    "name": "",
+    "type": "bytes32"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "MAX_CELLS",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "MIN_SCORE_BPS",
+  "outputs": [
+   {
+    "internalType": "uint16",
+    "name": "",
+    "type": "uint16"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "PAUSER_ROLE",
+  "outputs": [
+   {
+    "internalType": "bytes32",
+    "name": "",
+    "type": "bytes32"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "REVOKER_ROLE",
+  "outputs": [
+   {
+    "internalType": "bytes32",
+    "name": "",
+    "type": "bytes32"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "VERIFIER_ROLE",
+  "outputs": [
+   {
+    "internalType": "bytes32",
+    "name": "",
+    "type": "bytes32"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   },
+   {
+    "internalType": "uint256",
+    "name": "id",
+    "type": "uint256"
+   }
+  ],
+  "name": "balanceOf",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address[]",
+    "name": "accounts",
+    "type": "address[]"
+   },
+   {
+    "internalType": "uint256[]",
+    "name": "ids",
+    "type": "uint256[]"
+   }
+  ],
+  "name": "balanceOfBatch",
+  "outputs": [
+   {
+    "internalType": "uint256[]",
+    "name": "",
+    "type": "uint256[]"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint16",
+    "name": "",
+    "type": "uint16"
+   },
+   {
+    "internalType": "uint64",
+    "name": "",
+    "type": "uint64"
+   }
+  ],
+  "name": "cellClaim",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "domainSeparator",
+  "outputs": [
+   {
+    "internalType": "bytes32",
+    "name": "",
+    "type": "bytes32"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "eip712Domain",
+  "outputs": [
+   {
+    "internalType": "bytes1",
+    "name": "fields",
+    "type": "bytes1"
+   },
+   {
+    "internalType": "string",
+    "name": "name",
+    "type": "string"
+   },
+   {
+    "internalType": "string",
+    "name": "version",
+    "type": "string"
+   },
+   {
+    "internalType": "uint256",
+    "name": "chainId",
+    "type": "uint256"
+   },
+   {
+    "internalType": "address",
+    "name": "verifyingContract",
+    "type": "address"
+   },
+   {
+    "internalType": "bytes32",
+    "name": "salt",
+    "type": "bytes32"
+   },
+   {
+    "internalType": "uint256[]",
+    "name": "extensions",
+    "type": "uint256[]"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint16",
+    "name": "vintage",
+    "type": "uint16"
+   },
+   {
+    "internalType": "uint64[]",
+    "name": "cells",
+    "type": "uint64[]"
+   }
+  ],
+  "name": "findConflict",
+  "outputs": [
+   {
+    "internalType": "bool",
+    "name": "conflict",
+    "type": "bool"
+   },
+   {
+    "internalType": "uint64",
+    "name": "cell",
+    "type": "uint64"
+   },
+   {
+    "internalType": "uint256",
+    "name": "projectId",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "bytes32",
+    "name": "role",
+    "type": "bytes32"
+   }
+  ],
+  "name": "getRoleAdmin",
+  "outputs": [
+   {
+    "internalType": "bytes32",
+    "name": "",
+    "type": "bytes32"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "bytes32",
+    "name": "role",
+    "type": "bytes32"
+   },
+   {
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "grantRole",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "bytes32",
+    "name": "role",
+    "type": "bytes32"
+   },
+   {
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "hasRole",
+  "outputs": [
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "operator",
+    "type": "address"
+   }
+  ],
+  "name": "isApprovedForAll",
+  "outputs": [
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "components": [
+     {
+      "internalType": "address",
+      "name": "to",
+      "type": "address"
+     },
+     {
+      "internalType": "uint16",
+      "name": "vintage",
+      "type": "uint16"
+     },
+     {
+      "internalType": "int32",
+      "name": "centroidLatE6",
+      "type": "int32"
+     },
+     {
+      "internalType": "int32",
+      "name": "centroidLonE6",
+      "type": "int32"
+     },
+     {
+      "internalType": "bytes32",
+      "name": "cellsHash",
+      "type": "bytes32"
+     },
+     {
+      "internalType": "uint256",
+      "name": "tonnes",
+      "type": "uint256"
+     },
+     {
+      "internalType": "uint16",
+      "name": "scoreBps",
+      "type": "uint16"
+     },
+     {
+      "internalType": "bytes32",
+      "name": "evidenceHash",
+      "type": "bytes32"
+     },
+     {
+      "internalType": "bytes32",
+      "name": "metadataHash",
+      "type": "bytes32"
+     },
+     {
+      "internalType": "uint256",
+      "name": "deadline",
+      "type": "uint256"
+     },
+     {
+      "internalType": "uint256",
+      "name": "nonce",
+      "type": "uint256"
+     }
+    ],
+    "internalType": "struct CarbonTraceRegistry.Attestation",
+    "name": "a",
+    "type": "tuple"
+   },
+   {
+    "internalType": "uint64[]",
+    "name": "cells",
+    "type": "uint64[]"
+   },
+   {
+    "internalType": "string",
+    "name": "metadataURI",
+    "type": "string"
+   },
+   {
+    "internalType": "bytes",
+    "name": "signature",
+    "type": "bytes"
+   }
+  ],
+  "name": "mintVerified",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "projectId",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "nonceUsed",
+  "outputs": [
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "pause",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "paused",
+  "outputs": [
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "projectCount",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "name": "projects",
+  "outputs": [
+   {
+    "internalType": "address",
+    "name": "developer",
+    "type": "address"
+   },
+   {
+    "internalType": "uint16",
+    "name": "vintage",
+    "type": "uint16"
+   },
+   {
+    "internalType": "uint16",
+    "name": "scoreBps",
+    "type": "uint16"
+   },
+   {
+    "internalType": "bool",
+    "name": "revoked",
+    "type": "bool"
+   },
+   {
+    "internalType": "int32",
+    "name": "centroidLatE6",
+    "type": "int32"
+   },
+   {
+    "internalType": "int32",
+    "name": "centroidLonE6",
+    "type": "int32"
+   },
+   {
+    "internalType": "uint32",
+    "name": "cellCount",
+    "type": "uint32"
+   },
+   {
+    "internalType": "uint64",
+    "name": "mintedAt",
+    "type": "uint64"
+   },
+   {
+    "internalType": "uint256",
+    "name": "tonnes",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "retired",
+    "type": "uint256"
+   },
+   {
+    "internalType": "bytes32",
+    "name": "evidenceHash",
+    "type": "bytes32"
+   },
+   {
+    "internalType": "bytes32",
+    "name": "cellsHash",
+    "type": "bytes32"
+   },
+   {
+    "internalType": "string",
+    "name": "metadataURI",
+    "type": "string"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "bytes32",
+    "name": "role",
+    "type": "bytes32"
+   },
+   {
+    "internalType": "address",
+    "name": "callerConfirmation",
+    "type": "address"
+   }
+  ],
+  "name": "renounceRole",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "projectId",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "amount",
+    "type": "uint256"
+   },
+   {
+    "internalType": "string",
+    "name": "beneficiary",
+    "type": "string"
+   },
+   {
+    "internalType": "string",
+    "name": "reason",
+    "type": "string"
+   }
+  ],
+  "name": "retire",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   },
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "name": "retiredBy",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "projectId",
+    "type": "uint256"
+   },
+   {
+    "internalType": "string",
+    "name": "reason",
+    "type": "string"
+   }
+  ],
+  "name": "revokeProject",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "bytes32",
+    "name": "role",
+    "type": "bytes32"
+   },
+   {
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "revokeRole",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "from",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "to",
+    "type": "address"
+   },
+   {
+    "internalType": "uint256[]",
+    "name": "ids",
+    "type": "uint256[]"
+   },
+   {
+    "internalType": "uint256[]",
+    "name": "values",
+    "type": "uint256[]"
+   },
+   {
+    "internalType": "bytes",
+    "name": "data",
+    "type": "bytes"
+   }
+  ],
+  "name": "safeBatchTransferFrom",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "from",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "to",
+    "type": "address"
+   },
+   {
+    "internalType": "uint256",
+    "name": "id",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "value",
+    "type": "uint256"
+   },
+   {
+    "internalType": "bytes",
+    "name": "data",
+    "type": "bytes"
+   }
+  ],
+  "name": "safeTransferFrom",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "operator",
+    "type": "address"
+   },
+   {
+    "internalType": "bool",
+    "name": "approved",
+    "type": "bool"
+   }
+  ],
+  "name": "setApprovalForAll",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "bytes4",
+    "name": "interfaceId",
+    "type": "bytes4"
+   }
+  ],
+  "name": "supportsInterface",
+  "outputs": [
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "totalMinted",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "totalRetired",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "totalRevoked",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "unpause",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "id",
+    "type": "uint256"
+   }
+  ],
+  "name": "uri",
+  "outputs": [
+   {
+    "internalType": "string",
+    "name": "",
+    "type": "string"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ }
+]

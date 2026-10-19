@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+contracts-pkg/cache/
+contracts-pkg/artifacts/
+backend/data/
+deployments/localhost.json

@@ -1,0 +1,35 @@
+# Whole stack on a local chain:  docker compose up --build   then open http://localhost:8080
+services:
+  chain:
+    image: node:22-slim
+    working_dir: /work
+    volumes: ["./contracts-pkg:/work"]
+    command: sh -c "npm ci && npx hardhat node --hostname 0.0.0.0"
+    ports: ["8545:8545"]
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:8545',{method:'POST',headers:{'content-type':'application/json'},body:'{\\\"jsonrpc\\\":\\\"2.0\\\",\\\"method\\\":\\\"eth_chainId\\\",\\\"params\\\":[],\\\"id\\\":1}'}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 5s
+      retries: 30
+  deploy:
+    image: node:22-slim
+    working_dir: /work
+    depends_on: { chain: { condition: service_healthy } }
+    environment: { LOCAL_RPC_URL: "http://chain:8545" }
+    volumes: ["./contracts-pkg:/work", "./deployments:/deployments-out"]
+    command: sh -c "npx hardhat run scripts/deploy.js --network localhost && cp ../deployments/localhost.json /deployments-out/localhost.json"
+  backend:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    depends_on: { deploy: { condition: service_completed_successfully } }
+    environment:
+      RPC_URL: http://chain:8545
+      PUBLIC_RPC_URL: http://localhost:8545
+      DEPLOYMENT_FILE: /deployments/localhost.json
+      PUBLIC_BASE_URL: http://localhost:8080
+      CORS_ORIGINS: http://localhost:8080
+    volumes: ["./deployments:/deployments:ro", "evidence:/data"]
+  frontend:
+    build: { context: ., dockerfile: frontend/Dockerfile }
+    depends_on: [backend]
+    ports: ["8080:80"]
+volumes:
+  evidence:
